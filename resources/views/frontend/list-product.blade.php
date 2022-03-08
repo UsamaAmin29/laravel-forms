@@ -19,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-        @for
+        
         <tr>
             <td>Tiger Nixon</td>
             <td>System Architect</td>
@@ -28,7 +28,7 @@
             <td>2011/04/25</td>
             <td>$320,800</td>
         </tr>
-        @endfor 
+         
     </tbody>
     <tfoot>
         <tr>
