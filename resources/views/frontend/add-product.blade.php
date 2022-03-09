@@ -1,35 +1,37 @@
 @extends('home')
 @section('content')
+<div class="ms-5 me-5 ">
     <form method="post" action="{{ route('insert.product') }}">
-        <div class="mb-3">
+      @csrf  
+      <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="Name" aria-describedby="emailHelp">
+            <input type="text" class="form-control"  name="name" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Father Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="fname" aria-describedby="emailHelp">
+            <input type="text" class="form-control"  name="fname" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Address</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="address" aria-describedby="emailHelp">
+            <input type="text" class="form-control"  name="address" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Phone no</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" name="phone" aria-describedby="emailHelp">
+            <input type="number" class="form-control" name="phone" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
 
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+            <input type="email" class="form-control"  name="email" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+            <input type="password" class="form-control"  name="password">
         </div>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -37,4 +39,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+</div>
 @endsection

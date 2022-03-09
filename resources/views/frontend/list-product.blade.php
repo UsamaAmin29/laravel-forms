@@ -6,41 +6,52 @@
 @endsection
 
 @section('content')
+<div class="ms-5 me-5">
+<div class="d-flex flex-row-reverse bd-highlight">
+    <div class="p-2 bd-highlight"><a class="btn btn-md btn-primary " href={{ url('/add') }}>Add Product</a></div>
+</div>
 <table id="example" class="table table-striped" style="width:100%">
 
     <thead>
         <tr>
             <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>Father Name</th>
+            <th>Address</th>
+            <th>Contact No</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
+        @foreach ($product as $item)
+            
         
         <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td>$320,800</td>
+            <td>{{$item->name}}</td>
+            <td>{{$item->fname}}</td>
+            <td>{{$item->address}}</td>
+            <td>{{$item->phone}}</td>
+            <td>{{$item->email}}</td>
+            <td>{{$item->password}}</td>
+            <td> <a class="btn btn-sm btn-warning" href="frontend.add-product">Edit</a><a class="btn btn-sm btn-danger" href="">Delete</a></td>
         </tr>
-         
+        @endforeach 
     </tbody>
     <tfoot>
         <tr>
             <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
+            <th>Father Name</th>
+            <th>Address</th>
+            <th>Contact No</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Actions</th>
         </tr>
     </tfoot>
 </table>
+</div>
+</div>
 @endsection
 
 @section('script')

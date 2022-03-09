@@ -1,14 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\product;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
+use DB;
+use Redirect;
 
 class ProductController extends Controller
 {
    public function index()
    {
-       return view('frontend.list-product');
+     $product = DB::table('products')->get();
+    //  dd($product);
+   
+       return view('frontend.list-product',compact('product'));
    }
 
    public function add()
@@ -24,8 +31,13 @@ class ProductController extends Controller
        $product->address = $request->input('address');
        $product->phone = $request->input('phone');
        $product->email = $request->input('email');
-       $product->password = $request->input('password');
+       $product->password = Hash::make('password');
+       //    $product->password = $request->input('password');
+         
        $product->save();
-       return redirect('/product')->with('status','Product Added Successfully');
+    //    return Redirect::back()->withErrors(['msg' => 'The Message']);
+       return Redirect::back()->with('status','Product Added Successfully');
    }
+
+
 }
