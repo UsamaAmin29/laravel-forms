@@ -24,6 +24,9 @@ use App\Http\Controllers as usama;
 //     return view('frontend.edit-product');
 // });
 
-Route::get('/',[usama\productController::class,'index']);
+Route::get('/',[usama\productController::class,'index'])->name('home');
 Route::get('/add',[usama\productController::class,'add']);
 Route::post('/priduct-list',[usama\productController::class,'insert'])->name('insert.product');
+Route::get('/edit-product/{id}',[usama\productController::class,'edit'])->name('edit.product');
+Route::post('/update-product',[usama\productController::class,'update'])->name('update.product');
+Route::get('/delete-product/{id}',[usama\productController::class,'delete'])->name('delete.product');

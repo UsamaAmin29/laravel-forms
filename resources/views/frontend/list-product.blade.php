@@ -14,6 +14,7 @@
 
     <thead>
         <tr>
+            <th>Id</th>
             <th>Name</th>
             <th>Father Name</th>
             <th>Address</th>
@@ -28,13 +29,17 @@
             
         
         <tr>
+            <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
             <td>{{$item->fname}}</td>
             <td>{{$item->address}}</td>
             <td>{{$item->phone}}</td>
             <td>{{$item->email}}</td>
             <td>{{$item->password}}</td>
-            <td> <a class="btn btn-sm btn-warning" href="frontend.add-product">Edit</a><a class="btn btn-sm btn-danger" href="">Delete</a></td>
+            <td> 
+                <a class="btn btn-sm btn-warning" href="{{route('edit.product', ['id' => $item->id]) }}">Edit</a>
+                <a class="btn btn-sm btn-danger" href="{{route('delete.product',['id' => $item->id])}}">Delete</a>
+            </td>
         </tr>
         @endforeach 
     </tbody>

@@ -1,6 +1,9 @@
 @extends('home')
 @section('content')
 <div class="ms-5 me-5 ">
+    <div class="d-flex flex-row-reverse bd-highlight">
+        <div class="p-2 bd-highlight"><a class="btn btn-md btn-primary " href={{ url('/') }}>Product list</a></div>
+    </div>
     <form method="post" action="{{ route('insert.product') }}">
       @csrf  
       <div class="mb-3">
@@ -33,11 +36,22 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control"  name="password">
         </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+             Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Female
+            </label>
+          </div>
+       
         <button type="submit" class="btn btn-primary">Submit</button>
+        
     </form>
+    
 </div>
 @endsection
